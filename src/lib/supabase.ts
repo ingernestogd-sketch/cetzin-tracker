@@ -1,15 +1,46 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-const url = import.meta.env.VITE_SUPABASE_URL as string;
-const key = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
+const url = (import.meta.env.VITE_SUPABASE_URL as string) || '';
+const key = (import.meta.env.VITE_SUPABASE_ANON_KEY as string) || '';
 
-if (!url || !key) {
-  console.warn('Supabase env vars no definidas. Revisa .env.local');
+export const isSupabaseConfigured = Boolean(url && key);
+
+let client: SupabaseClient;
+
+if (isSupabaseConfigured) {
+  client = createClient(url, key, {
+    realtime: { params: { eventsPerSecond: 5 } },
+  });
+} else {
+  console.error(
+    '[Cetzin Tracker] Faltan VITE_SUPABASE_URL y/o VITE_SUPABASE_ANON_KEY. ' +
+      'Configurelas en Vercel y vuelve a hacer redeploy.'
+  );
+  // Cliente "muerto" que no rompe el render. Cada llamada devuelve un error suave.
+  const noopError = { message: 'Supabase no configurado en este entorno' };
+  const fakeChannel = {
+    on() { return this; },
+    subscribe() { return this; },
+    unsubscribe() { return Promise.resolve('ok'); },
+  };
+  client = {
+    from() {
+      return {
+        select: async () => ({ data: [], error: noopError }),
+        upsert: async () => ({ data: null, error: noopError }),
+        insert: async () => ({ data: null, error: noopError }),
+        update: async () => ({ data: null, error: noopError }),
+        delete: async () => ({ data: null, error: noopError }),
+        order() { return this; },
+        eq() { return this; },
+      };
+    },
+    channel() { return fakeChannel; },
+    removeChannel() { return Promise.resolve('ok'); },
+  } as unknown as SupabaseClient;
 }
 
-export const supabase = createClient(url, key, {
-  realtime: { params: { eventsPerSecond: 5 } },
-});
+export const supabase = client;
 
 export type DailyCheck = {
   id?: string;

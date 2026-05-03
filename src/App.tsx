@@ -5,9 +5,15 @@ import TabRutina from './components/TabRutina';
 import TabMediciones from './components/TabMediciones';
 import TabProgreso from './components/TabProgreso';
 import { Sparkles, Jack } from './components/DisneyDecorations';
+import ConfigMissing from './components/ConfigMissing';
+import { isSupabaseConfigured } from './lib/supabase';
 
 export default function App() {
   const [tab, setTab] = useState<Tab>('inicio');
+
+  if (!isSupabaseConfigured) {
+    return <ConfigMissing />;
+  }
 
   return (
     <div style={{ minHeight: '100vh', background: '#FFF0F5' }}>
