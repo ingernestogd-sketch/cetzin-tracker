@@ -45,7 +45,7 @@ export const supabase = client;
 export type DailyCheck = {
   id?: string;
   check_date: string;
-  section: 'des' | 'eje' | 'spa' | 'noc';
+  section: 'man' | 'eje' | 'spa' | 'noc';
   item_index: number;
   checked: boolean;
   updated_at?: string;

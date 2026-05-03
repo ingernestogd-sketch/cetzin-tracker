@@ -28,7 +28,7 @@ export default function TabRutina({
   const isWeekday = tw >= 1 && tw <= 5;
   const fallback = initialDayIdx ?? (isWeekday ? tw - 1 : 0);
   const [dayIdx, setDayIdx] = useState<number>(fallback);
-  const [section, setSection] = useState<SectionKey>('des');
+  const [section, setSection] = useState<SectionKey>('man');
   const { map, toggle } = useDailyChecks();
 
   const monday = mondayOf(t);

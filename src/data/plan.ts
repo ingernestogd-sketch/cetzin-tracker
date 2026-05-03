@@ -19,16 +19,17 @@ export const DAYS = [
   { idx: 4, key: 'vie', short: 'Vi', long: 'Viernes' },
 ];
 
-export type SectionKey = 'des' | 'eje' | 'spa' | 'noc';
+export type SectionKey = 'man' | 'eje' | 'spa' | 'noc';
 
 export const SECTIONS: { key: SectionKey; label: string }[] = [
-  { key: 'des', label: 'Desayunos' },
+  { key: 'man', label: 'Mañana' },
   { key: 'eje', label: 'Ejercicio' },
   { key: 'spa', label: 'SPA' },
   { key: 'noc', label: 'Ritual noche' },
 ];
 
-const DESAYUNOS_LARGO = [
+const MANANA_LARGO = [
+  '¿Dormiste 8 horas?',
   'Desayuno rapido 7am: yogurt coco + fruta (mientras haces el lunch)',
   'Pre-entreno 8am: agua coco + almendras + platano',
   'Barrita Kirkland o scoop HABITS antes del gym (10am) — no entrar en vacio',
@@ -38,7 +39,8 @@ const DESAYUNOS_LARGO = [
   'Cena: proteina + verdura o batido HABITS',
 ];
 
-const DESAYUNOS_MIE = [
+const MANANA_MIE = [
+  '¿Dormiste 8 horas?',
   'Desayuno rapido 7am: yogurt coco + fruta',
   'Pre-baile 8am: agua coco + almendras + platano',
   'Post-baile 11am: scoop HABITS + fruta',
@@ -50,12 +52,14 @@ const RITUAL_NORMAL = [
   'Aplicar Somatoline o Clarins Body Fit con masaje ascendente en piernas y gluteo (2 min)',
   'Piernas en la pared — legs up the wall (2 min)',
   'Foam roller zona banana roll (1 min)',
+  'Acostarse antes de las 10pm',
 ];
 
 const RITUAL_MARTES = [
   'Aplicar Clarins Body Fit solamente — NO Somatoline dia de shockwave (2 min)',
   'Piernas en la pared (2 min)',
   'Foam roller zona banana roll (1 min)',
+  'Acostarse antes de las 10pm',
 ];
 
 export type DayPlan = Record<SectionKey, string[]>;
@@ -63,7 +67,7 @@ export type DayPlan = Record<SectionKey, string[]>;
 export const DAY_PLANS: DayPlan[] = [
   // Lunes
   {
-    des: DESAYUNOS_LARGO,
+    man: MANANA_LARGO,
     eje: [
       'Baile 8:30–9:30am (1 hora de clase)',
       'Gym 10:00–12:00am con entrenadora — gluteo y pierna pesado',
@@ -74,7 +78,7 @@ export const DAY_PLANS: DayPlan[] = [
   },
   // Martes
   {
-    des: DESAYUNOS_LARGO,
+    man: MANANA_LARGO,
     eje: [
       'Gym 9:30–11:40am con entrenadora — femoral y anticelulitico',
       'Uso de medias de compresion',
@@ -84,7 +88,7 @@ export const DAY_PLANS: DayPlan[] = [
   },
   // Miercoles
   {
-    des: DESAYUNOS_MIE,
+    man: MANANA_MIE,
     eje: [
       'Baile 8:30–9:30am: primera clase (1h)',
       'Baile 9:30–11:00am: segunda clase (1.5h) — 2.5 horas total',
@@ -95,7 +99,7 @@ export const DAY_PLANS: DayPlan[] = [
   },
   // Jueves
   {
-    des: DESAYUNOS_LARGO,
+    man: MANANA_LARGO,
     eje: [
       'Gym 9:30–11:40am con entrenadora — gluteo medio y brazos',
       'Uso de medias de compresion',
@@ -105,7 +109,7 @@ export const DAY_PLANS: DayPlan[] = [
   },
   // Viernes
   {
-    des: DESAYUNOS_LARGO,
+    man: MANANA_LARGO,
     eje: [
       'Gym 9:30–11:40am con entrenadora — gluteo pesado y femoral (si puede)',
       'Uso de medias de compresion',
@@ -117,7 +121,7 @@ export const DAY_PLANS: DayPlan[] = [
 
 export const totalItemsForDay = (dayIdx: number): number => {
   const p = DAY_PLANS[dayIdx];
-  return p.des.length + p.eje.length + p.spa.length + p.noc.length;
+  return p.man.length + p.eje.length + p.spa.length + p.noc.length;
 };
 
 export const MEASUREMENT_FIELDS: {
