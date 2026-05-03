@@ -67,6 +67,7 @@ export const DAY_PLANS: DayPlan[] = [
     eje: [
       'Baile 8:30–9:30am (1 hora de clase)',
       'Gym 10:00–12:00am con entrenadora — gluteo y pierna pesado',
+      'Uso de medias de compresion',
     ],
     spa: ['Radiofrecuencia 5–7pm', 'Drenaje linfatico 5–7pm'],
     noc: RITUAL_NORMAL,
@@ -74,7 +75,10 @@ export const DAY_PLANS: DayPlan[] = [
   // Martes
   {
     des: DESAYUNOS_LARGO,
-    eje: ['Gym 9:30–11:40am con entrenadora — femoral y anticelulitico'],
+    eje: [
+      'Gym 9:30–11:40am con entrenadora — femoral y anticelulitico',
+      'Uso de medias de compresion',
+    ],
     spa: ['Shockwave 5–7pm', 'Drenaje linfatico 5–7pm'],
     noc: RITUAL_MARTES,
   },
@@ -84,6 +88,7 @@ export const DAY_PLANS: DayPlan[] = [
     eje: [
       'Baile 8:30–9:30am: primera clase (1h)',
       'Baile 9:30–11:00am: segunda clase (1.5h) — 2.5 horas total',
+      'Uso de medias de compresion',
     ],
     spa: ['Presoterapia en casa 20–30 min (tarde)'],
     noc: RITUAL_NORMAL,
@@ -91,14 +96,20 @@ export const DAY_PLANS: DayPlan[] = [
   // Jueves
   {
     des: DESAYUNOS_LARGO,
-    eje: ['Gym 9:30–11:40am con entrenadora — gluteo medio y brazos'],
+    eje: [
+      'Gym 9:30–11:40am con entrenadora — gluteo medio y brazos',
+      'Uso de medias de compresion',
+    ],
     spa: ['Drenaje linfatico 3–5pm'],
     noc: RITUAL_NORMAL,
   },
   // Viernes
   {
     des: DESAYUNOS_LARGO,
-    eje: ['Gym 9:30–11:40am con entrenadora — gluteo pesado y femoral (si puede)'],
+    eje: [
+      'Gym 9:30–11:40am con entrenadora — gluteo pesado y femoral (si puede)',
+      'Uso de medias de compresion',
+    ],
     spa: ['Drenaje linfatico 1–3pm', 'Presoterapia 1–3pm'],
     noc: RITUAL_NORMAL,
   },
