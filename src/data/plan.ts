@@ -28,7 +28,7 @@ export const SECTIONS: { key: SectionKey; label: string }[] = [
   { key: 'noc', label: 'Ritual noche' },
 ];
 
-const MANANA_LARGO = [
+const MANANA_LARGO_BASE = [
   '¿Dormiste 8 horas?',
   'Desayuno rapido 7am: yogurt coco + fruta (mientras haces el lunch)',
   'Pre-entreno 8am: agua coco + almendras + platano',
@@ -39,6 +39,16 @@ const MANANA_LARGO = [
   'Cena: proteina + verdura o batido HABITS',
 ];
 
+const MANANA_LUN = [
+  ...MANANA_LARGO_BASE,
+  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente glúteos y muslos (2 min)',
+];
+
+const MANANA_LARGO = [
+  ...MANANA_LARGO_BASE,
+  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente (2 min)',
+];
+
 const MANANA_MIE = [
   '¿Dormiste 8 horas?',
   'Desayuno rapido 7am: yogurt coco + fruta',
@@ -46,10 +56,10 @@ const MANANA_MIE = [
   'Post-baile 11am: scoop HABITS + fruta',
   'Comida familiar con proteina',
   'Cena: proteina + verdura o batido HABITS',
+  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente (2 min)',
 ];
 
 const RITUAL_LUN = [
-  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente glúteos y muslos (2 min)',
   'Noche post-ducha: Weleda Aceite de Abedul, masaje ascendente piernas y glúteos (3 min)',
   'Piernas en la pared — legs up the wall (2 min)',
   'Foam roller zona banana roll (1 min)',
@@ -57,7 +67,6 @@ const RITUAL_LUN = [
 ];
 
 const RITUAL_MAR = [
-  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente (2 min)',
   'Noche post-ducha: Weleda Aceite de Árnica, masaje suave (3 min) — SIN cafeína hoy, calma microinflamación del shockwave',
   'Piernas en la pared (2 min)',
   'Foam roller zona banana roll (1 min)',
@@ -65,7 +74,6 @@ const RITUAL_MAR = [
 ];
 
 const RITUAL_MIE = [
-  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente (2 min)',
   'Noche post-ducha: Weleda Aceite de Abedul, masaje ascendente más largo (4-5 min) — día sin SPA, la crema hace el trabajo principal',
   'Piernas en la pared — legs up the wall (2 min)',
   'Foam roller zona banana roll (1 min)',
@@ -73,7 +81,6 @@ const RITUAL_MIE = [
 ];
 
 const RITUAL_JUE = [
-  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente (2 min)',
   'Noche post-ducha: Weleda Aceite de Abedul, masaje ascendente (3 min) — drena lo que la vacumterapia movilizó',
   'Piernas en la pared — legs up the wall (2 min)',
   'Foam roller zona banana roll (1 min)',
@@ -81,7 +88,6 @@ const RITUAL_JUE = [
 ];
 
 const RITUAL_VIE = [
-  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente (2 min)',
   'Noche post-ducha: Weleda Aceite de Abedul, masaje ascendente (3 min) — cierre semanal de drenaje',
   'Piernas en la pared — legs up the wall (2 min)',
   'Foam roller zona banana roll (1 min)',
@@ -93,7 +99,7 @@ export type DayPlan = Record<SectionKey, string[]>;
 export const DAY_PLANS: DayPlan[] = [
   // Lunes
   {
-    man: MANANA_LARGO,
+    man: MANANA_LUN,
     eje: [
       'Baile 8:30–9:30am (1 hora de clase)',
       'Gym 10:00–12:00am con entrenadora — gluteo y pierna pesado',
