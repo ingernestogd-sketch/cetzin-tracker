@@ -24,6 +24,17 @@ export const DISNEY_QUOTES = [
   { q: 'Tu historia aun no ha terminado. Lo mejor esta por escribirse.', a: 'Coco' },
   { q: 'Confia en el proceso. Confia en ti.', a: 'Doc Hudson — Cars' },
   { q: 'Eres la heroina de tu propia historia.', a: 'Moana' },
+  { q: 'La fuerza no viene de la habilidad física, viene de una voluntad indomable.', a: 'Capitán América — Marvel' },
+  { q: 'Lo que te hace diferente es lo que te hace fuerte.', a: 'Captain Marvel' },
+  { q: 'No importa cuántas veces caigas, importa cuántas veces te levantas.', a: 'Avengers' },
+  { q: 'No importa quién seas, siempre puedes cambiar.', a: 'Ratatouille' },
+  { q: 'La flor que florece en la adversidad es la más rara y hermosa de todas.', a: 'Mulán' },
+  { q: 'No sabes lo fuerte que eres hasta que ser fuerte es la única opción.', a: 'Hércules' },
+  { q: 'No necesito que me salven. Yo me salvo sola.', a: 'Barbie 2023' },
+  { q: 'Puedes ser cualquier cosa que quieras ser.', a: 'Barbie 2023' },
+  { q: 'No hay fuerza más poderosa en el mundo que una mujer decidida a surgir.', a: 'Harriet Tubman' },
+  { q: 'Fui valiente una vez. Luego descubrí que podía serlo todos los días.', a: 'Malala Yousafzai' },
+  { q: 'No esperes que te den permiso para ser extraordinaria.', a: 'Oprah Winfrey' },
 ];
 
 export const getDailyQuote = () => {
