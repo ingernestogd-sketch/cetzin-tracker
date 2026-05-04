@@ -48,16 +48,42 @@ const MANANA_MIE = [
   'Cena: proteina + verdura o batido HABITS',
 ];
 
-const RITUAL_NORMAL = [
-  'Aplicar Somatoline o Clarins Body Fit con masaje ascendente en piernas y gluteo (2 min)',
+const RITUAL_LUN = [
+  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente glúteos y muslos (2 min)',
+  'Noche post-ducha: Weleda Aceite de Abedul, masaje ascendente piernas y glúteos (3 min)',
   'Piernas en la pared — legs up the wall (2 min)',
   'Foam roller zona banana roll (1 min)',
   'Acostarse antes de las 10pm',
 ];
 
-const RITUAL_MARTES = [
-  'Aplicar Clarins Body Fit solamente — NO Somatoline dia de shockwave (2 min)',
+const RITUAL_MAR = [
+  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente (2 min)',
+  'Noche post-ducha: Weleda Aceite de Árnica, masaje suave (3 min) — SIN cafeína hoy, calma microinflamación del shockwave',
   'Piernas en la pared (2 min)',
+  'Foam roller zona banana roll (1 min)',
+  'Acostarse antes de las 10pm',
+];
+
+const RITUAL_MIE = [
+  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente (2 min)',
+  'Noche post-ducha: Weleda Aceite de Abedul, masaje ascendente más largo (4-5 min) — día sin SPA, la crema hace el trabajo principal',
+  'Piernas en la pared — legs up the wall (2 min)',
+  'Foam roller zona banana roll (1 min)',
+  'Acostarse antes de las 10pm',
+];
+
+const RITUAL_JUE = [
+  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente (2 min)',
+  'Noche post-ducha: Weleda Aceite de Abedul, masaje ascendente (3 min) — drena lo que la vacumterapia movilizó',
+  'Piernas en la pared — legs up the wall (2 min)',
+  'Foam roller zona banana roll (1 min)',
+  'Acostarse antes de las 10pm',
+];
+
+const RITUAL_VIE = [
+  'Mañana post-ducha: Somatoline Active Day o Clarins Body Fit, masaje ascendente (2 min)',
+  'Noche post-ducha: Weleda Aceite de Abedul, masaje ascendente (3 min) — cierre semanal de drenaje',
+  'Piernas en la pared — legs up the wall (2 min)',
   'Foam roller zona banana roll (1 min)',
   'Acostarse antes de las 10pm',
 ];
@@ -74,7 +100,7 @@ export const DAY_PLANS: DayPlan[] = [
       'Uso de medias de compresion',
     ],
     spa: ['Radiofrecuencia 5–7pm', 'Drenaje linfatico 5–7pm'],
-    noc: RITUAL_NORMAL,
+    noc: RITUAL_LUN,
   },
   // Martes
   {
@@ -84,7 +110,7 @@ export const DAY_PLANS: DayPlan[] = [
       'Uso de medias de compresion',
     ],
     spa: ['Shockwave 5–7pm', 'Drenaje linfatico 5–7pm'],
-    noc: RITUAL_MARTES,
+    noc: RITUAL_MAR,
   },
   // Miercoles
   {
@@ -95,7 +121,7 @@ export const DAY_PLANS: DayPlan[] = [
       'Uso de medias de compresion',
     ],
     spa: ['Presoterapia en casa 20–30 min (tarde)'],
-    noc: RITUAL_NORMAL,
+    noc: RITUAL_MIE,
   },
   // Jueves
   {
@@ -105,7 +131,7 @@ export const DAY_PLANS: DayPlan[] = [
       'Uso de medias de compresion',
     ],
     spa: ['Drenaje linfatico 3–5pm'],
-    noc: RITUAL_NORMAL,
+    noc: RITUAL_JUE,
   },
   // Viernes
   {
@@ -115,7 +141,7 @@ export const DAY_PLANS: DayPlan[] = [
       'Uso de medias de compresion',
     ],
     spa: ['Drenaje linfatico 1–3pm', 'Presoterapia 1–3pm'],
-    noc: RITUAL_NORMAL,
+    noc: RITUAL_VIE,
   },
 ];
 
